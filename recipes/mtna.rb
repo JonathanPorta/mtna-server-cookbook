@@ -18,7 +18,7 @@ end
 # install the systemd service file that runs mtna
 template '/etc/systemd/system/mtna.service' do
   mode '0755'
-  source 'mtna.service'
+  source 'mtna.service.erb'
   notifies :restart, 'service[mtna.service]', :delayed
 end
 

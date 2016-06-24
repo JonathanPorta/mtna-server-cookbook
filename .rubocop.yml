@@ -33,3 +33,4 @@ AllCops:
     - 'Guardfile'
     - 'metadata.rb'
     - '.kitchen/**'
+    - 'cookbooks/**'
