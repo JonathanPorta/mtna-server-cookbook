@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 2.2.1
+install: gem install fpm package_cloud
+script: make test_ci
+addons:
+  apt:
+    sources:
+    - chef-stable-precise
+    packages:
+    - chefdk
+    - rpm
+before_deploy: make package

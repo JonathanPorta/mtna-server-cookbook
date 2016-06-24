@@ -1,0 +1,20 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: fedora-24
+
+suites:
+  - name: default
+    run_list:
+      - recipe[mtna_server::default]
+    attributes:
+
+  - name: autochef
+    run_list:
+      - recipe[mtna_server::autochef]
+    attributes:

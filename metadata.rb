@@ -1,0 +1,10 @@
+name 'mtna-server-cookbook'
+maintainer 'Jonathan Porta'
+maintainer_email 'jonathan@jonathanPorta.com'
+license 'WTFPL'
+description 'Configures a fedora 24 server that runs the mtna software'
+long_description 'Configures mtna server'
+version '0.0.1'
+
+depends 'packagecloud'
+depends 'firewall'

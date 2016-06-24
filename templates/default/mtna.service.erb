@@ -1,0 +1,17 @@
+# Dropped off by chef - changes will be overwritten.
+# See https://github.com/PronghornDigital/mtna-server-cookbook
+
+[Unit]
+Description=mtna node.js process
+After=network-online.target
+
+[Service]
+User=mtna
+Group=mtna
+Restart=on-failure
+Environment=NODE_ENV=live
+Environment=DATA_DIRECTORY
+ExecStart=/usr/bin/node /opt/PronghornDigital/mtna/dist/api/app.js
+
+[Install]
+WantedBy=multi-user.target
