@@ -1,4 +1,4 @@
-name 'mtna-server-cookbook'
+name 'mtna_server'
 maintainer 'Jonathan Porta'
 maintainer_email 'jonathan@jonathanPorta.com'
 license 'WTFPL'
