@@ -8,10 +8,10 @@ After=network-online.target
 [Service]
 User=mtna
 Group=mtna
-Restart=on-failure
+Restart=always
 Environment=NODE_ENV=live
-Environment=DATA_DIRECTORY
-ExecStart=/usr/bin/node /opt/PronghornDigital/mtna/dist/api/app.js
+Environment=ARCHIVE_DATA_ROOT=/var/archives
+ExecStart=/usr/local/bin/node /opt/PronghornDigital/mtna/dist/api/app.js
 
 [Install]
 WantedBy=multi-user.target

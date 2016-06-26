@@ -4,11 +4,15 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
-packagecloud_repo 'PronghornDigital/mtna_server_cookbook' do
+packagecloud_repo 'PronghornDigital/mtna-server-cookbook' do
   type 'rpm'
   metadata_expire '0'
 end
 
-package 'mtna_server_cookbook' do
-  action [:upgrade]
+bash 'mtna' do
+  code <<-EOH
+    dnf install -y mtna-server
+    dnf upgrade -y mtna-server
+    EOH
+  ignore_failure true
 end

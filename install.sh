@@ -1,5 +1,5 @@
 #!/bin/bash
-dnf install -y https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chefdk-0.6.0-1.el6.x86_64.rpm
+dnf install -y https://packages.chef.io/stable/el/6/chef-12.11.18-1.el6.x86_64.rpm
 
 curl https://packagecloud.io/install/repositories/PronghornDigital/mtna-server-cookbook/script.rpm.sh | bash
 dnf install -y mtna_server

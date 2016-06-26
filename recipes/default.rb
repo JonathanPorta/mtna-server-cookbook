@@ -4,5 +4,12 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
+# Dependency needed for installing our repo
+bash 'pygpgme' do
+  code <<-EOH
+    dnf install -y pygpgme
+    EOH
+end
+
 # include_recipe 'mtna_server::backup'
 include_recipe 'mtna_server::mtna'

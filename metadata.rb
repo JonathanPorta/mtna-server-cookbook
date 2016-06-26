@@ -10,3 +10,5 @@ issues_url 'https://github.com/PronghornDigital/mtna-server-cookbook/issues'
 
 depends 'packagecloud'
 depends 'firewall'
+depends 'openssh'
+depends 'nodejs'

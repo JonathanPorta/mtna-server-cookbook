@@ -11,12 +11,11 @@ addons:
     - chefdk
     - rpm
 before_deploy: make package
-deployment:
+deploy:
+  provider: script
   skip_cleanup: true
-  production:
-    branch: master
-    commands:
-    - package_cloud push PronghornDigital/mtna-server-cookbook/os/version *.rpm
+  branch: master
+  script: package_cloud push PronghornDigital/mtna-server-cookbook/os/version *.rpm
 env:
   global:
     secure: nOuTGs4T+6yhS/49fdhmuY/JGjaUgU1Gh1S8aEk89SP3bgyzMQ7RiJeZBFcUDt/Yz+/exDsio83c7jhI9Q7TJfuvwCmBTfj3gdjESMC+Yqc4VGaNBdj3yX90BUvUQ4lqYdGQMSRW9o62dgFAT0dUWrQfQ6HxjZ27LBNEy1XLs+ViSoPNvBC7ke+I5U5nTA/uIG7zQwa9Lo5SJQBWOJE/r9kpc1wxtEWjqFyIGJtC1leYVKLx30UBlIqhGdj1VyDhdxgtJmDm6K/yedQuuj7PCOXxfHMnMd/7mq4Lt8pzZ3p75Oq18Nw9pKYySWN/CN/V227/ErcFOjdewuny879Mx+T8SMBsDejsk6748VoFRwTJbkUHvg1BXqUjXZtSI7dO+6yPIlDTzPDNwIhu64lvLDsLCjmx7BEWzQ0g2T4qP6BA8gW/RowrzDuJbYt8wlbiMIpFVf3qYY8wY9971NbuPuXeW+6GBDlfqokjDWrrZFd0eXqjsOpLw8TNDQBuML9IQOEtm46sVBlbMEGOGPGfrbOaJPMDgyObMdQh9uEev7GtBpuO0teijV9jlp1lalnLKvrcpanjK4J+93ZDaN2houB7SYaSocTw9syLa+Oo9Xsei9gTKSJcjNprXM0SBxrlc3qZw8+9qQna8iajYqwi5JDmtI1WOF5cUYCZ8LAiD6k=
