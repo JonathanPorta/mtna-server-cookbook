@@ -19,7 +19,11 @@ package:
 	chef exec berks vendor cookbooks
 	bash package.sh
 
-release:
+release: _install_package_cloud_deps _push_rpm
+_install_package_cloud_deps:
+	gem install package_cloud
+
+_push_rpm:
 	echo 'HI'
 	package_cloud version
 	package_cloud push PronghornDigital/mtna-server-cookbook/os/version ./*.rpm

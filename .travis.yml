@@ -10,7 +10,7 @@ addons:
     - rpm
 
 before_install:
-  - gem install fpm package_cloud
+  - gem install fpm
 
 script: make test_ci
 
