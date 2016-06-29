@@ -18,3 +18,8 @@ suites:
     run_list:
       - recipe[mtna_server::autochef]
     attributes:
+
+  - name: installer
+    run_list:
+      - recipe[mtna_server_installer::default]
+    attributes:
