@@ -10,7 +10,7 @@ describe 'mtna_server::autochef' do
     it { should be_running }
   end
 
-  describe service('autochef.service') do
+  describe service('autochef') do
     it { should exist }
   end
 

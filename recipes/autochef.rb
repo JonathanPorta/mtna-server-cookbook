@@ -32,3 +32,10 @@ service 'autochef.timer' do
   reload_command 'systemctl daemon-reload'
   action [:start, :enable]
 end
+
+# ensure the correct permissons on the script
+file '/opt/PronghornDigital/mtna-server-cookbook/autochef.sh' do
+  owner 'root'
+  group 'mtna'
+  mode '0775'
+end

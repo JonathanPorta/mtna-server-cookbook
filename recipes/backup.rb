@@ -27,3 +27,10 @@ directory '/var/archives/backups' do
   mode '0775'
   action :create
 end
+
+# ensure the correct permissons on the script
+file '/opt/PronghornDigital/mtna-server-cookbook/backup.sh' do
+  owner 'root'
+  group 'mtna'
+  mode '0775'
+end
