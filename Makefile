@@ -19,5 +19,10 @@ package:
 	chef exec berks vendor cookbooks
 	bash package.sh
 
+release:
+	echo 'HI'
+	package_cloud version
+	package_cloud push PronghornDigital/mtna-server-cookbook/os/version ./*.rpm
+
 watch:
 	chef exec rubocop

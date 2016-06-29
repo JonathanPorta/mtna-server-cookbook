@@ -21,10 +21,7 @@ deploy:
   provider: script
   skip_cleanup: true
   branch: master
-  script:
-    - echo 'HI!'
-    - package_cloud version
-    - package_cloud push PronghornDigital/mtna-server-cookbook/os/version ./*.rpm
+  script: make release
 
 env:
   global:
