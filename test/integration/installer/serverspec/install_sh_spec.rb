@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'mtna_server::install.sh' do
+describe 'mtna_server_test::install.sh' do
   describe package('mtna-server-cookbook') do
     it { should be_installed }
   end

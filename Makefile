@@ -26,7 +26,7 @@ _install_package_cloud_deps:
 _push_rpm:
 	echo 'HI'
 	package_cloud version
-	package_cloud push PronghornDigital/mtna-server-cookbook/os/version ./*.rpm
+	package_cloud push PronghornDigital/mtna-server-cookbook/fedora/23 ./*.rpm
 
 watch:
 	chef exec rubocop
