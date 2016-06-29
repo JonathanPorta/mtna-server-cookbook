@@ -11,5 +11,6 @@ bash 'pygpgme' do
     EOH
 end
 
-# include_recipe 'mtna_server::backup'
+include_recipe 'mtna_server::backup'
+include_recipe 'mtna_server::autochef'
 include_recipe 'mtna_server::mtna'

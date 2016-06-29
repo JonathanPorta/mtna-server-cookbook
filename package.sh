@@ -23,4 +23,5 @@ fpm -s dir -t rpm \
     solo.rb \
     autochef.sh \
     firewalld.sh \
+    backup.sh \
     README.md

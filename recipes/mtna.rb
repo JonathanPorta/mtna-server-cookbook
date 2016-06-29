@@ -47,6 +47,11 @@ file '/var/archives/data/.db.json' do
   group 'mtna'
 end
 
+# before we install the new version, let's backup
+bash '/opt/PronghornDigital/backup.sh' do
+  ignore_failure false
+end
+
 # tell rpm where to find the mtna repo
 packagecloud_repo 'PronghornDigital/mtna' do
   type 'rpm'

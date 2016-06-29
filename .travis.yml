@@ -9,10 +9,12 @@ addons:
     - chefdk
     - rpm
 
+before_install:
+  - gem install fpm package_cloud
+
 script: make test_ci
 
 before_deploy:
-  - gem install fpm package_cloud
   - make package
 
 deploy:
