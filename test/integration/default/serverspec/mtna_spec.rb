@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe 'mtna_server::mtna' do
-
   describe file('/usr/local/bin/node') do
     it { should be_file }
   end
