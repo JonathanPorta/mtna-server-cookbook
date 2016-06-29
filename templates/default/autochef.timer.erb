@@ -1,0 +1,11 @@
+# Dropped off by chef - changes will be overwritten.
+# See https://github.com/PronghornDigital/mtna-server-cookbook
+
+[Unit]
+Description=Timer for an hourly chef run to keep server converged
+
+[Timer]
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target

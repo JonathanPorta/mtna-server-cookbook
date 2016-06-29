@@ -1,0 +1,12 @@
+# Dropped off by chef - changes will be overwritten.
+# See https://github.com/PronghornDigital/mtna-server-cookbook
+
+[Unit]
+Description=Perform backup of MTNA data
+
+[Service]
+Type=simple
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/opt/PronghornDigital/backup.sh

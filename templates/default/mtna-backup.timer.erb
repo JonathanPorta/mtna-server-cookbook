@@ -1,0 +1,11 @@
+# Dropped off by chef - changes will be overwritten.
+# See https://github.com/PronghornDigital/mtna-server-cookbook
+
+[Unit]
+Description=Timer for performing daily backup of MTNA data
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

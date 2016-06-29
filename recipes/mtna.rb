@@ -10,11 +10,6 @@ node.default['nodejs']['version'] = '6.2.2'
 node.default['nodejs']['binary']['checksum'] = '7a6df881183e70839857b51653811aaabc49a2ffb93416a1c9bd333dcef84ea3'
 include_recipe 'nodejs'
 
-# default mtna user account
-user 'mtna' do
-  system true
-end
-
 # default mtna data directory
 directory '/var/archives' do
   owner 'root'
