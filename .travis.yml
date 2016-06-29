@@ -7,14 +7,11 @@ addons:
     - chef-stable-precise
     packages:
     - chefdk
-
-before_install:
-  - sudo apt-get update -q
+    - rpm
 
 script: make test_ci
 
 before_deploy:
-  - sudo apt-get install rpm
   - gem install fpm package_cloud
   - make package
 
