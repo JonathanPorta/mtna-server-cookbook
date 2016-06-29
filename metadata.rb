@@ -4,7 +4,7 @@ maintainer_email 'jonathan@jonathanPorta.com'
 license 'WTFPL'
 description 'Configures a fedora 24 server that runs the mtna software'
 long_description 'Configures mtna server'
-version '0.0.1'
+version '0.0.2'
 source_url 'https://github.com/PronghornDigital/mtna-server-cookbook'
 issues_url 'https://github.com/PronghornDigital/mtna-server-cookbook/issues'
 
