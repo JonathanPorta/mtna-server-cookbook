@@ -51,6 +51,8 @@ end
 packagecloud_repo 'PronghornDigital/mtna' do
   type 'rpm'
   metadata_expire '0'
+  force_os 'fedora'
+  force_dist '23'
 end
 
 # install the mtna rpm

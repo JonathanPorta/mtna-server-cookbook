@@ -24,4 +24,5 @@ fpm -s dir -t rpm \
     autochef.sh \
     firewalld.sh \
     backup.sh \
+    install.sh \
     README.md
