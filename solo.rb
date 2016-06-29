@@ -1,1 +1,1 @@
-cookbook_path '/opt/PronghornDigital/mtna-server/cookbooks'
+cookbook_path '/opt/PronghornDigital/mtna-server-cookbook/cookbooks'

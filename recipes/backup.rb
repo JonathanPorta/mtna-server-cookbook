@@ -20,7 +20,7 @@ service 'mtna-backup.timer' do
   action [:start, :enable]
 end
 
-# default mtna backup data directory
+# default mtna backup directory
 directory '/var/archives/backups' do
   owner 'root'
   group 'mtna'
