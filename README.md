@@ -41,6 +41,23 @@ You can have [Guard](https://github.com/guard/guard) watch files and
 automatically run tests as you make changes:
         $ bundle exec guard
 
+## Production
+Manage/Monitor/Poke the MTNA service:
+```
+systemctl status|start|stop|restart mtna
+```
+Something broken and you need to manually deploy? Make sure the latest RPMs have been pushed from CI.
+```
+sudo dnf update mtna-server-cookbook # update the server config scripts to the latest rpm
+```
+Then run `autochef`:
+```
+sudo systemctl start autochef # forces an a chef run and updates the state of the server to the desired state.
+```
+`Autochef` runs automatically each hour.
+
+If stuff is super broke then you can just reinstall the entire cookbook by runing the installer mentioned above in the first step. Chef's job is to converge the machine's state toward a known good state. Chef runs are idempotent so running chef multiple times should not cause issues.
+
 ## License and Authors
 Author: Jonathan Porta
 
