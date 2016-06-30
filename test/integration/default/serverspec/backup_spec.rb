@@ -20,7 +20,12 @@ describe 'mtna_server::backup' do
     it { should be_running }
   end
 
-  describe service('mtna-backup.service') do
-    it { should be_installed }
+  # TODO: be_installed is not implemented for service types yet. Workaround:
+  describe file('/etc/systemd/system/mtna-backup.service') do
+    it { should be_file }
   end
+
+  # describe service('mtna-backup.service') do
+  #   it { should be_installed }
+  # end
 end

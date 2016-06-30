@@ -4,6 +4,9 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
+# ensures that the base system stuff is setup when bootstraping
+include_recipe 'mtna_server::system'
+
 packagecloud_repo 'PronghornDigital/mtna-server-cookbook' do
   type 'rpm'
   metadata_expire '0'

@@ -4,7 +4,7 @@ set -e
 echo 'Starting backup of MTNA data...'
 
 TIMESTAMP=`date +%b-%d-%y`
-FILENAME="backup-$TIME.tar.gz"
+FILENAME="backup-$TIMESTAMP.tar.gz"
 SRC='/var/archives/data/.db.json'
 BACKUPS_DIR='/var/archives/backups'
 
