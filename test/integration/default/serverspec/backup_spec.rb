@@ -20,7 +20,7 @@ describe 'mtna_server::backup' do
     it { should be_running }
   end
 
-  describe service('mtna-backup') do
-    it { should exist }
+  describe service('mtna-backup.service') do
+    it { should be_installed }
   end
 end

@@ -15,7 +15,7 @@ describe 'mtna_server_test::install.sh' do
   end
 
   describe service('autochef.service') do
-    it { should exist }
+    it { should be_installed }
   end
 
   describe file('/opt/PronghornDigital/mtna-server-cookbook/autochef.sh') do
