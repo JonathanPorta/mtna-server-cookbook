@@ -26,6 +26,14 @@ describe 'mtna_server::mtna' do
     it { should be_grouped_into 'mtna' }
   end
 
+  # make sure our forced, pre-install backup happened.
+  t = Time.new
+  backup_file = t.strftime("backup-%b-%d-%y-mtna-chef-preinstall.tar.gz")
+
+  describe file("/var/archives/backups/#{ backup_file }") do
+    it { should be_file }
+  end
+
   describe service('mtna') do
     it { should be_enabled }
     it { should be_running }

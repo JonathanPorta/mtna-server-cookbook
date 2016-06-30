@@ -37,7 +37,8 @@ file '/var/archives/data/.db.json' do
 end
 
 # before we install the new version, let's backup
-bash '/opt/PronghornDigital/backup.sh' do
+bash 'mtna-preinstall-backup' do
+  code '/opt/PronghornDigital/mtna-server-cookbook/backup.sh -mtna-chef-preinstall'
   ignore_failure false
 end
 

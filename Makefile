@@ -24,7 +24,6 @@ _install_package_cloud_deps:
 	gem install package_cloud
 
 _push_rpm:
-	echo 'HI'
 	package_cloud version
 	package_cloud push PronghornDigital/mtna-server-cookbook/fedora/23 ./*.rpm
 	package_cloud push PronghornDigital/mtna-server-cookbook/fedora/24 ./*.rpm
