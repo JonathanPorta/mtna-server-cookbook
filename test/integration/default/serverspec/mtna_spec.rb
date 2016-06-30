@@ -28,9 +28,9 @@ describe 'mtna_server::mtna' do
 
   # make sure our forced, pre-install backup happened.
   t = Time.new
-  backup_file = t.strftime("backup-%b-%d-%y-mtna-chef-preinstall.tar.gz")
+  backup_file = t.strftime('backup-%b-%d-%y-mtna-chef-preinstall.tar.gz')
 
-  describe file("/var/archives/backups/#{ backup_file }") do
+  describe file("/var/archives/backups/#{backup_file}") do
     it { should be_file }
   end
 

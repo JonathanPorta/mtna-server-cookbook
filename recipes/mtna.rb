@@ -5,14 +5,6 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
 # default mtna data directory
-directory '/var/archives' do
-  owner 'root'
-  group 'mtna'
-  mode '0775'
-  action :create
-end
-
-# default mtna data directory
 directory '/var/archives/data' do
   owner 'root'
   group 'mtna'

@@ -6,5 +6,5 @@
 
 include_recipe 'mtna_server::system'
 include_recipe 'mtna_server::autochef'
-include_recipe 'mtna_server::mtna'
 include_recipe 'mtna_server::backup'
+include_recipe 'mtna_server::mtna'
