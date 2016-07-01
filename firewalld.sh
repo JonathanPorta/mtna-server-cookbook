@@ -10,7 +10,8 @@ firewall-cmd --set-default-zone=home
 
 echo 'Allowing SSH through the firewall...'
 firewall-cmd --add-service=ssh --permanent
-
+firewall-cmd --add-port=8080/tcp --permanent
+firewall-cmd --add-port=80/tcp --permanent
 # echo 'Opening ports 135, 139, and 445 for TCP traffic for smbd'
 # firewall-cmd --add-port=135/tcp --permanent
 # firewall-cmd --add-port=139/tcp --permanent
