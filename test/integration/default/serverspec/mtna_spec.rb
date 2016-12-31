@@ -4,7 +4,9 @@ describe 'mtna_server::mtna::deps' do
   describe file('/usr/local/bin/node') do
     it { should be_file }
   end
+end
 
+describe 'mtna_server::mtna::directories' do
   describe file('/var/archives') do
     it { should be_directory }
     it { should be_mode 775 }
@@ -13,6 +15,13 @@ describe 'mtna_server::mtna::deps' do
   end
 
   describe file('/var/archives/data') do
+    it { should be_directory }
+    it { should be_mode 775 }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'mtna' }
+  end
+
+  describe file('/var/archives/incoming') do
     it { should be_directory }
     it { should be_mode 775 }
     it { should be_owned_by 'root' }
