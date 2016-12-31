@@ -9,6 +9,7 @@ bash 'pygpgme' do
   code <<-EOH
     dnf install -y pygpgme
     EOH
+  ignore_failure true
 end
 
 # ensure sshd is running
