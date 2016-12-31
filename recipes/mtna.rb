@@ -12,6 +12,14 @@ directory '/var/archives/data' do
   action :create
 end
 
+# default mtna incoming video directory
+directory '/var/archives/incoming' do
+  owner 'root'
+  group 'mtna'
+  mode '0775'
+  action :create
+end
+
 # ensure that the .db.json at least exists
 file '/var/archives/data/.db.json' do
   content '{}'
