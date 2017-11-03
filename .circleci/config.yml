@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: jonathanporta/docker-fedora-node-build-image:latest
+    steps:
+      - checkout
+      - run:
+          name: Install Chef Dependencies
+          command: dnf install -y https://packages.chef.io/files/stable/chefdk/2.3.4/el/7/chefdk-2.3.4-1.el7.x86_64.rpm
+      - run:
+          name: Execute Chef Test Suite
+          command: make test_ci
+      - run:
+          name: Package and Cut Release
+          command: make build release

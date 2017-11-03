@@ -24,13 +24,13 @@ clean:
 	-rm *.rpm
 
 package: clean
-	BUILD_NUM='local' ./package.sh ./package.json
+	BUILD_NUM='local' ./ops/package.sh ./package.json
 
 release: package
-	./gh.sh upload ${REPO_SLUG} ${VERSION} ./*.rpm
+	./ops/gh.sh upload ${REPO_SLUG} ${VERSION} ./*.rpm
 
 unrelease:
-	./gh.sh delete ${REPO_SLUG} ${VERSION}
+	./ops/gh.sh delete ${REPO_SLUG} ${VERSION}
 
 install: package
 	sudo dnf install -y ./*rpm

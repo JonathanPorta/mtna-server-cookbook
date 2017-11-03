@@ -34,3 +34,4 @@ AllCops:
     - 'metadata.rb'
     - '.kitchen/**/*'
     - 'cookbooks/**/*'
+    - 'metadata.rb'

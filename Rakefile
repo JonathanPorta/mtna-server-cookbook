@@ -1,3 +1,4 @@
+# TODO: Decide to use Rake or Make. Not both for teh same things!
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 require 'foodcritic'
@@ -11,13 +12,13 @@ namespace :style do
   desc 'Run Chef style checks'
   FoodCritic::Rake::LintTask.new(:chef) do |t|
     t.options = {
-      fail_tags: ['any']
+      fail_tags: ['correctness']
     }
   end
 end
 
 desc 'Run all style checks'
-task style: %w(style:chef style:ruby)
+task style: %w[style:chef style:ruby]
 
 # Rspec and ChefSpec
 desc 'Run ChefSpec examples'
@@ -37,7 +38,7 @@ namespace :integration do
 end
 
 desc 'Run tests on Travis'
-task travis: %w(style spec) # TODO: Figure out how to run integration tests in CI.
+task ci: %w[style spec] # TODO: Figure out how to run integration tests in CI.
 
 # Default
 task default: ['style', 'spec', 'integration:vagrant']

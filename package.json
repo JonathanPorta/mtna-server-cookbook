@@ -1,0 +1,18 @@
+{
+  "name": "mtna-server-cookbook",
+  "version": "0.1.0",
+  "description": "MTNA Server Cookbook'",
+  "repository": "PronghornDigital/mtna-server-cookbook",
+  "homepage":"https://github.com/pronghorndigital/mtna-server-cookbook",
+  "author": "Jonathan Porta <jonathan@jonathanPorta.com>",
+  "files":[
+    "cookbooks",
+    "solo.json",
+    "solo.rb",
+    "autochef.sh",
+    "firewalld.sh",
+    "backup.sh",
+    "install.sh",
+    "README.md"
+  ]
+}
