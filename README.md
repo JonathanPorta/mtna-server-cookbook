@@ -1,4 +1,4 @@
-# MTNA Server Cookbook [![Build Status](https://travis-ci.org/PronghornDigital/mtna-server-cookbook.svg?branch=master)](https://travis-ci.org/PronghornDigital/mtna-server-cookbook)
+# MTNA Server Cookbook [![CircleCI](https://circleci.com/gh/PronghornDigital/mtna-server-cookbook/tree/master.svg?style=svg)](https://circleci.com/gh/PronghornDigital/mtna-server-cookbook/tree/master)
 To bootstrap a machine and install this cookbook:
 
         $ curl https://raw.githubusercontent.com/PronghornDigital/mtna-server-cookbook/master/install.sh | bash
@@ -48,7 +48,7 @@ systemctl status|start|stop|restart mtna
 ```
 Something broken and you need to manually deploy? Make sure the latest RPMs have been pushed from CI.
 ```
-sudo dnf update mtna-server-cookbook # update the server config scripts to the latest rpm
+sudo dnf install -y $(gh latest PronghornDigital/mtna-server-cookbook --download-url) # update the server config scripts to the latest rpm
 ```
 Then run `autochef`:
 ```

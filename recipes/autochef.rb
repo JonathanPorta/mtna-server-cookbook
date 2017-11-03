@@ -7,19 +7,18 @@
 # ensures that the base system stuff is setup when bootstraping
 include_recipe 'mtna_server::system'
 
-packagecloud_repo 'PronghornDigital/mtna-server-cookbook' do
-  type 'rpm'
-  metadata_expire '0'
-  force_os 'fedora'
-  force_dist '23'
+bash 'ops_tools' do
+  code <<-EOH
+    dnf install -y jq https://github.com/JonathanPorta/ops/releases/download/0.0.4/ops-0.0.4-local.git860078f.x86_64.rpm
+    EOH
+  ignore_failure false
 end
 
 bash 'mtna-server-cookbook' do
   code <<-EOH
-    dnf install -y mtna-server-cookbook
-    dnf upgrade -y mtna-server-cookbook
+    dnf install -y $(gh latest PronghornDigital/mtna-server-cookbook --download-url)
     EOH
-  ignore_failure true
+  ignore_failure false
 end
 
 # install the autochef systemd service and timer
@@ -35,7 +34,7 @@ end
 
 service 'autochef.timer' do
   reload_command 'systemctl daemon-reload'
-  action [:start, :enable]
+  action %i[start enable]
 end
 
 # ensure the correct permissons on the script

@@ -6,14 +6,16 @@ describe 'mtna_server::mtna::deps' do
   end
 end
 
-describe 'mtna_server::mtna::directories' do
+describe 'mtna_server::mtna::archive_directory' do
   describe file('/var/archives') do
     it { should be_directory }
     it { should be_mode 775 }
     it { should be_owned_by 'root' }
     it { should be_grouped_into 'mtna' }
   end
+end
 
+describe 'mtna_server::mtna::archives_directories' do
   describe file('/var/archives/data') do
     it { should be_directory }
     it { should be_mode 775 }

@@ -42,22 +42,13 @@ bash 'mtna-preinstall-backup' do
   ignore_failure false
 end
 
-# tell rpm where to find the mtna repo
-packagecloud_repo 'PronghornDigital/mtna' do
-  type 'rpm'
-  metadata_expire '0'
-  force_os 'fedora'
-  force_dist '23'
-end
-
 # install the mtna rpm
 # TODO: Use package - currently package doesn't support dnf and the dnf cookbook is broken.
 bash 'mtna' do
   code <<-EOH
-    dnf install -y mtna
-    dnf upgrade -y mtna
+    dnf install -y $(gh latest PronghornDigital/mtna-server-cookbook --download-url)
     EOH
-  ignore_failure true
+  ignore_failure false
 end
 
 # install the systemd service file that runs mtna
@@ -69,5 +60,5 @@ end
 
 service 'mtna.service' do
   reload_command 'systemctl daemon-reload'
-  action [:start, :enable]
+  action %i[start enable]
 end

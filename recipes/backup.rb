@@ -17,7 +17,7 @@ end
 
 service 'mtna-backup.timer' do
   reload_command 'systemctl daemon-reload'
-  action [:start, :enable]
+  action %i[start enable]
 end
 
 # default mtna backup directory

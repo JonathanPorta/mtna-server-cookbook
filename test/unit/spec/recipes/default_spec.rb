@@ -9,7 +9,7 @@ require_relative '../spec_helper'
 describe 'mtna_server::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(platform: 'fedora', version: '24')
+      runner = ChefSpec::SoloRunner.new(platform: 'fedora', version: '24')
       runner.converge(described_recipe)
     end
 
